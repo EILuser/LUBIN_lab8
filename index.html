@@ -29,17 +29,17 @@
         <div class="container">
             <h2 class="main__title">Что Вам необходимо?</h2>
             <div class="wrapper">
-                <div class="blocks">
+                <div class="blocks" id="first_block" onclick="elements23Disappear()">
                     <img src="img/f3.png" alt="Картинка" class="blocks__images">
                     <h3>Первый блок</h3>
                     <p class="images__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                 </div>
-                <div class="blocks">
+                <div class="blocks" id="second_block" onclick="elements13Disappear()">
                     <img src="img/f4.png" alt="Картинка" class="blocks__images">
                     <h3>Второй блок</h3>
                     <p class="images__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit?</p>
                 </div>
-                <div class="blocks">
+                <div class="blocks" id="third_block" onclick="elements12Disappear()">
                     <img src="img/f5.png" alt="Картинка" class="blocks__images">
                     <h3>Третий блок</h3>
                     <p class="images__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit!</p>
@@ -48,15 +48,64 @@
         </div>
     </main>
 
-    <section>
+    <section class="section__form1">
+        <div class="container">
+            <h2 class="section__title">Форма заказа продукта или услуги</h2>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <div class="input__wrapper">
+                    <label for="first_name">Имя:</label>
+                    <input type="text" id="first_name" onchange="validateFirstName()">
+                </div>
+                <div class="input__wrapper">
+                    <label for="last_name">Фамилия:</label>
+                    <input type="text" id="last_name" onchange="validateLastName()">
+                </div>
+                <div class="input__wrapper">
+                    <label for="telephone_number1">Номер телефона:</label>
+                    <input type="tel" id="telephone_number1" placeholder="xxx-xxx-xx-xx" onchange="validateTelephoneNumber()">
+                </div>
+                <div class="input__wrapper">
+                    <label for="destination">Место назначения:</label>
+                    <input type="text" id="destination" onchange="validateDestination()">
+                </div>
+                <div class="input__wrapper">
+                    <label for="date">Дата и время:</label>
+                    <div class="date__and__time">
+                        <input type="date" id="date" class="date__input">
+                        <input type="time" id="time" class="time__input">
+                    </div>
+                </div>
+                <div class="input__wrapper">
+                    <label for="quantity">Количество:</label>
+                    <input type="text" id="quantity" onchange="validateQuantity()">
+                </div>
+                <button onclick="validationNotification(event)">Отправить</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="section__form2" id="form2" onmouseenter="changeColor()" onmouseleave="returnColor()">
         <div class="container">
             <h2 class="section__title">Форма заказа обратного звонка</h2>
             <form action="#" method="post" enctype="multipart/form-data">
-                <input type="text" placeholder="Имя">
-                <input type="email" placeholder="Введите свой E-mail">
-                <input type="tel" placeholder="Телефон">
-                <input type="text" placeholder="Какая тема Вас интересует?">
-                <button>Отправить вопрос!</button>
+                <!--
+                    Имя должно содержать только буквы русского/латинского алфавита
+                    (так как предполагается ввод полного имени, пробелы разрешены)
+                -->
+                <input type="text" placeholder="Имя" required pattern="^[А-Яа-яЁёA-Za-z\s]+$" minlength="8" maxlength="50" id="name">
+                <!--
+                    email должен содержать символ @ и состоять минимум из 8 символов
+                -->
+                <input type="email" placeholder="Введите свой E-mail" required pattern="^[A-Za-z0-9@.]{6,40}[.]{1}[a-z]{2,4}" minlength="9" id="email">
+                <!--
+                    Номер телефона начинается с цифры 8 и содержит 10 цифр (не считая цифру 8)
+                -->
+                <input type="tel" placeholder="Телефон" required pattern="^[8]{1}[0-9]{10}" id="telephone_number2">
+                <!--
+                    Длина данного поля не должна превышать 40 символов
+                -->
+                <input type="text" placeholder="Какая тема Вас интересует?" required maxlength="40" id="theme">
+                <button onclick="notification(event)">Отправить вопрос!</button>
             </form>
         </div>
     </section>
@@ -64,5 +113,7 @@
     <footer>
         <p class="copyright">© Все на этом сайте защищено</p>
     </footer>
+
+    <script src="js/app.js"></script>
 </body>
 </html>

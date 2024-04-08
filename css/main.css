@@ -101,9 +101,37 @@ main {
     color: gray;
 }
 
-/* Section */
+/* Section 1 */
 
-section {
+.section__form1 {
+    background-color: #eca3f8;
+    padding-top: 60px;
+    padding-bottom: 90px;
+}
+
+.input__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.date__and__time {
+    display: flex;
+    flex-direction: column;
+}
+
+.date__input {
+    margin: 0;
+    width: 302px;
+}
+
+.time__input {
+    width: 302px;
+}
+
+/* Section 2 */
+
+.section__form2 {
     background-color: #ecf3f8;
     padding-top: 60px;
     padding-bottom: 90px;
@@ -131,8 +159,10 @@ input {
 button {
     width: 308px;
     height: 44px;
+    font-size: 14px;
     background-color: #ffd429;
     border-width: 1px;
+    border-radius: 10px;
     border-color: gray;
     cursor: pointer;
 }
@@ -194,6 +224,10 @@ footer {
         display: block;
         margin: 40px auto;
     }
+
+    .input__wrapper {
+        width: 80%;
+    }
 }
 
 /* Medium devices */
@@ -221,6 +255,21 @@ footer {
     button {
         width: 100%;
     }
+
+    .input__wrapper {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    label {
+        text-align: center;
+    }
+
+    .date__and__time input {
+        width: 99%;
+    }
 }
 
 /* Small devices */
@@ -241,4 +290,9 @@ footer {
     section {
         padding-bottom: 70px;
     }
+}
+
+/* Подсветка некорректно заполненных полей (для "Формы заказа обратного звонка") */
+.section__form2 input:invalid {
+    box-shadow: 3px 3px 3px rgb(255, 60, 60);
 }
