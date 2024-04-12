@@ -230,36 +230,35 @@ footer {
     animation-duration: 5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    position: relative;
 }
 
 @keyframes shifting {
     0% {
-        left: 0;
+        text-indent: 0;
     }
     12.5% {
-        left: -10%;
+        text-indent: -20%;
     }
     25% {
-        left: -20%;
+        text-indent: -40%;
     }
     37.5% {
-        left: -10%;
+        text-indent: -20%;
     }
     50% {
-        left: 0;
+        text-indent: 0;
     }
     62.5% {
-        left: 10%;
+        text-indent: 20%;
     }
     75% {
-        left: 20%;
+        text-indent: 40%;
     }
     87.5% {
-        left: 10%;
+        text-indent: 20%;
     }
     100% {
-        left: 0;
+        text-indent: 0;
     }
 }
 
@@ -355,31 +354,31 @@ footer {
 
     @keyframes shifting {
         0% {
-            left: 0;
+            text-indent: 0;
         }
         12.5% {
-            left: -5%;
+            text-indent: -15%;
         }
         25% {
-            left: -10%;
+            text-indent: -30%;
         }
         37.5% {
-            left: -5%;
+            text-indent: -15%;
         }
         50% {
-            left: 0;
+            text-indent: 0;
         }
         62.5% {
-            left: 5%;
+            text-indent: 15%;
         }
         75% {
-            left: 10%;
+            text-indent: 30%;
         }
         87.5% {
-            left: 5%;
+            text-indent: 15%;
         }
         100% {
-            left: 0;
+            text-indent: 0;
         }
     }
 }
@@ -427,6 +426,40 @@ footer {
         100% {
             font-size: 13px;
             top: 42%;
+        }
+    }
+
+    .keyFrames__animation2 {
+        animation-duration: 2s;
+    }
+
+    @keyframes shifting {
+        0% {
+            text-indent: 0;
+        }
+        12.5% {
+            text-indent: -10%;
+        }
+        25% {
+            text-indent: -20%;
+        }
+        37.5% {
+            text-indent: -10%;
+        }
+        50% {
+            text-indent: 0;
+        }
+        62.5% {
+            text-indent: 10%;
+        }
+        75% {
+            text-indent: 20%;
+        }
+        87.5% {
+            text-indent: 10%;
+        }
+        100% {
+            text-indent: 0;
         }
     }
 }
