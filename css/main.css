@@ -61,11 +61,15 @@ header {
     justify-content: center;
     align-items: center;
     background-color: #ffd429;
-    transition: all 0.5;
+    position: relative;
+    /* 1 анимация с transition */
+    transition: all 0.35s;
 }
 
 .offer__button:hover {
-    background-color: yellow;
+    top: 3px;
+    box-shadow: 5px 5px 10px black;
+    text-shadow: 5px 5px 5px black;
 }
 
 .header__image {
@@ -165,24 +169,98 @@ button {
     border-radius: 10px;
     border-color: gray;
     cursor: pointer;
+    /* 2 анимация с transition */
+    transition: all 0.35s;
 }
 
 button:hover {
     background-color: yellow;
+    font-size: 12px;
 }
 
 /* Footer */
 
 footer {
     background: linear-gradient(to bottom, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 50%,rgba(125,185,232,1) 100%);
+    height: 113px;
 }
 
 .copyright {
+    position: relative;
     margin: 0;
-    padding: 50px;
+    top: 42%;
     text-align: center;
     color: white;
     font-size: 13px;
+}
+
+/* Animations with keyFrames */
+.keyFrames__animation1 {
+    animation-name: scaling;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scaling {
+    0% {
+        font-size: 13px;
+        top: 42%;
+    }
+    25% {
+        font-size: 20px;
+        top: 38%;
+    }
+    50% {
+        font-size: 27px;
+        top: 34%;
+    }
+    75% {
+        font-size: 20px;
+        top: 38%;
+    }
+    100% {
+        font-size: 13px;
+        top: 42%;
+    }
+}
+
+.keyFrames__animation2 {
+    animation-name: shifting;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+@keyframes shifting {
+    0% {
+        left: 0;
+    }
+    12.5% {
+        left: -10%;
+    }
+    25% {
+        left: -20%;
+    }
+    37.5% {
+        left: -10%;
+    }
+    50% {
+        left: 0;
+    }
+    62.5% {
+        left: 10%;
+    }
+    75% {
+        left: 20%;
+    }
+    87.5% {
+        left: 10%;
+    }
+    100% {
+        left: 0;
+    }
 }
 
 /* Adaptation */
@@ -270,6 +348,40 @@ footer {
     .date__and__time input {
         width: 99%;
     }
+
+    .keyFrames__animation2 {
+        animation-duration: 3s;
+    }
+
+    @keyframes shifting {
+        0% {
+            left: 0;
+        }
+        12.5% {
+            left: -5%;
+        }
+        25% {
+            left: -10%;
+        }
+        37.5% {
+            left: -5%;
+        }
+        50% {
+            left: 0;
+        }
+        62.5% {
+            left: 5%;
+        }
+        75% {
+            left: 10%;
+        }
+        87.5% {
+            left: 5%;
+        }
+        100% {
+            left: 0;
+        }
+    }
 }
 
 /* Small devices */
@@ -289,6 +401,33 @@ footer {
 
     section {
         padding-bottom: 70px;
+    }
+
+    .keyFrames__animation1 {
+        animation-duration: 3s;
+    }
+
+    @keyframes scaling {
+        0% {
+            font-size: 13px;
+            top: 42%;
+        }
+        25% {
+            font-size: 16px;
+            top: 41%;
+        }
+        50% {
+            font-size: 19px;
+            top: 39%;
+        }
+        75% {
+            font-size: 16px;
+            top: 41%;
+        }
+        100% {
+            font-size: 13px;
+            top: 42%;
+        }
     }
 }
 
